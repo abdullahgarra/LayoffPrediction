@@ -3,12 +3,18 @@ import pandas as pd
 from datetime import datetime, timedelta
 import time
 import os
-# Database connection details
- Load environment variables (ensure they are set beforehand)
-DB_HOST = os.getenv("DB_HOST", "default_host")
-DB_USER = os.getenv("DB_USER", "default_user")
-DB_PASSWORD = os.getenv("DB_PASSWORD", "default_password")
-DB_NAME = os.getenv("DB_NAME", "default_db")
+
+
+load_dotenv()
+
+ApiKey = os.getenv("API_KEY")
+client = openai.OpenAI(api_key=ApiKey)
+
+DB_HOST = os.getenv("DB_HOST")
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_NAME = os.getenv("DB_NAME")
+TABLE_NAME = os.getenv("TABLE_NAME")
 
 
 # Connect to the database
