@@ -1,9 +1,16 @@
 import pymysql
+import os
 
-DB_HOST = "mysqlsrv1.cs.tau.ac.il"
-DB_USER = "markfesenko"
-DB_PASSWORD = "3mZhryk&^5yP"
-DB_NAME = "markfesenko"
+load_dotenv()
+
+ApiKey = os.getenv("API_KEY")
+client = openai.OpenAI(api_key=ApiKey)
+
+DB_HOST = os.getenv("DB_HOST")
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_NAME = os.getenv("DB_NAME")
+TABLE_NAME = os.getenv("TABLE_NAME")
 
 def connect_to_db():
     return pymysql.connect(
