@@ -2,10 +2,6 @@ import pymysql
 import os
 
 load_dotenv()
-
-ApiKey = os.getenv("API_KEY")
-client = openai.OpenAI(api_key=ApiKey)
-
 DB_HOST = os.getenv("DB_HOST")
 DB_USER = os.getenv("DB_USER")
 DB_PASSWORD = os.getenv("DB_PASSWORD")
