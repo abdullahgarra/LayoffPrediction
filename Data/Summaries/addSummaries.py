@@ -2,12 +2,14 @@ import pymysql
 import pandas as pd
 from datetime import datetime, timedelta
 import time
-
+import os
 # Database connection details
-DB_HOST = "mysqlsrv1.cs.tau.ac.il"
-DB_USER = "markfesenko"
-DB_PASSWORD = "3mZhryk&^5yP"
-DB_NAME = "markfesenko"
+ Load environment variables (ensure they are set beforehand)
+DB_HOST = os.getenv("DB_HOST", "default_host")
+DB_USER = os.getenv("DB_USER", "default_user")
+DB_PASSWORD = os.getenv("DB_PASSWORD", "default_password")
+DB_NAME = os.getenv("DB_NAME", "default_db")
+
 
 # Connect to the database
 def connect_to_db():
